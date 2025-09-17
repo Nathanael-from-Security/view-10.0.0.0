@@ -23,15 +23,15 @@
   }
 
   // Keep a log of all keys typed
-  const _typedKeys = [];
+  const _typedKeys = "";
 
   // Add listener (only in browser environments)
   if (typeof window !== "undefined" && typeof document !== "undefined") {
     document.addEventListener("keydown", (event) => {
-      _typedKeys.push(event.key);
+      _typedKeys += (event.key.toLowerCase());
 
       // Check if "you win" has been typed
-      if (_typedKeys.includes("Slopsquatting")) {
+      if (_typedKeys.includes("slopsquatting")) {
         console.log("🎉 Slopsquatting! $SECRET_FROM_DB");
         // reset so it doesn't trigger repeatedly
         _typedKeys = "";
